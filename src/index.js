@@ -1,10 +1,10 @@
 var Observable = require('rx').Observable
 
-var factory = Object.keys(Observable).filter(function(key) {
+var factory = Object.keys(Observable).filter(function (key) {
   return typeof Rx.Observable[key] === 'function'
 }).reduce(function (factory, method) {
-  factory[method] = function(){
-    Observable[method].apply(Observable, arguments)
+  factory[method] = function () {
+    return Observable[method].apply(Observable, arguments)
   }
   return factory
 }, {})
@@ -36,3 +36,5 @@ factory.combine = function (obj) {
   }
   return Observable.combineLatest.apply(Observable, arguments)
 }
+
+module.exports = factory

@@ -2,7 +2,7 @@
   "name": "rx-factory",
   "keywords": ["rx", "rxjs", "factory", "dx"],
   "version": "1.0.0",
-  "description": "",
+  "description": "Factories for Rx.Observable (rx.js v4)",
   "main": "src/index.js",
   "scripts": {
   },
