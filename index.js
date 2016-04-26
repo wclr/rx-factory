@@ -1,7 +1,7 @@
 var Observable = require('rx').Observable
 
 var factory = Object.keys(Observable).filter(function (key) {
-  return typeof Rx.Observable[key] === 'function'
+  return typeof Observable[key] === 'function'
 }).reduce(function (factory, method) {
   factory[method] = function () {
     return Observable[method].apply(Observable, arguments)
